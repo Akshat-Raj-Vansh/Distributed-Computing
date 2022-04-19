@@ -8,8 +8,6 @@ from time import sleep
 import time
 from client import Client
 
-
-SEPARATOR = "<SEPARATOR>"
 BUFFER_SIZE = 1024 * 5
 
 

@@ -19,3 +19,9 @@ class Add:
 
     def getJson(self):
         return {"num1": self.num1, "num2": self.num2, "sum":self.sum}
+    
+    def fromJson(self, json):
+        self.num1 = int(json["num1"])
+        self.num2 = int(json["num2"])
+        self.sum = int(json["sum"])
+        return self

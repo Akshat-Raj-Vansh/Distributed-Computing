@@ -49,6 +49,7 @@ class Client:
         data = marshal.loads(bytes)
         print(data)
         res  = Add(int(data["num1"]), int(data["num2"], int(data["sum"])))
+        # res = Add.fromJson(data)
         return res
     
 

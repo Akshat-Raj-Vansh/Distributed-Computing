@@ -12,7 +12,6 @@ import time
 from client import Client
 from add import Add
 
-SEPARATOR = "<SEPARATOR>"
 BUFFER_SIZE = 1024 * 5
 
 
@@ -43,6 +42,7 @@ class Server:
         data = marshal.loads(bytes)
         print(data)
         res  = Add(int(data["num1"]), int(data["num2"]), 0)
+        #res = Add.fromJson(data)
         return res
 
     def listen(self, client, client_addr):
