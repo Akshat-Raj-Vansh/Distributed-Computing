@@ -1,0 +1,5 @@
+{
+  "files.exclude": {
+    "2-File Transfer\\RMI Java\\src\\*.class": true
+  }
+}
