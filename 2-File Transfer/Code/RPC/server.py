@@ -34,8 +34,8 @@ class Server:
     def encode(self, value):
         return value.encode('ascii')
 
-    def add(self, a, b):
-        return a + b
+    def add(self, nums):
+        return sum(nums)
     
     def listen(self, client, client_addr):
         while True:
@@ -46,7 +46,8 @@ class Server:
             if message == "ADD":
                 nums = data[data.find('(')+1:data.find(')')].split(',')
                 # sum  = int(nums[0]) + int(nums[1])
-                sum = self.add(int(nums[0]), int(nums[1]))
+                nums = [int(x) for x in nums]
+                sum = self.add(nums)
                 client.send(self.encode("RESULT({})".format(sum)))
 
     def threaded(self, client, client_addr):
@@ -64,5 +65,5 @@ class Server:
 
 
 if __name__ == '__main__':
-    server = Server(1237, host="192.168.26.196")
+    server = Server(1237, host="127.0.0.1")
     server.start()

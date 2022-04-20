@@ -54,7 +54,7 @@ class Client:
         while True:
             message = input("")
             if(message[:message.find("(")] == "ADD"):
-                self.fileName = message[message.find("(")+1:message.find(")")]
+                self.nums = message[message.find("(")+1:message.find(")")]
                 client.send(self.encode(message))
 
 
@@ -67,5 +67,5 @@ class Client:
 
 
 if __name__ == '__main__':
-    client = Client('192.168.26.196', 1237)
+    client = Client('127.0.0.1', 1237)
     client.start()
